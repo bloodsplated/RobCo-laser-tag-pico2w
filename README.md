@@ -5,7 +5,7 @@ Fallout-Themed Laser Tag System (Powered by Raspberry Pi Pico 2W &amp; CircuitPy
 
 
 ## Links to parts
-- [3D parts](https://www.printables.com/model/1503654-robco-ae7p-lazer-tag-system)
+- [3D printed parts](https://www.printables.com/model/1503654-robco-ae7p-lazer-tag-system)
 - [Harware parts](https://www.printables.com/model/1503654-robco-ae7p-lazer-tag-system)
 - [Assembly Instruction](https://www.printables.com/model/1503654-robco-ae7p-lazer-tag-system)
 - [cirkitdesigner Wiring](https://app.cirkitdesigner.com/project/1d3a4b62-3213-40ae-a360-1e849d3ae2aa) `not all parts are correct` 
@@ -57,10 +57,10 @@ Current keys:
 - `1.0`
    - First public release 
    - basic offline gameplay
-- `1.1`
+- `2.0`
    - MQTT server integration
    - Team game modes
-- `1.2`
+- `3.0`
    - Vest support
    - More game modes
 - `Wishlist`
