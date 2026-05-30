@@ -1,0 +1,10 @@
+CIRCUITPY_PYSTACK_SIZE = 8192
+CIRCUITPY_WIFI_SSID = "wifi 2.4"
+CIRCUITPY_WIFI_PASSWORD = "passwordhere"
+
+
+# [ DEBUG tools ]
+#DEBUG = 1 #enable debug mode 
+#MUTE = 1 #mute sounds
+#SKIP_SHOW = 1 #skip Bootup show faster boot up 
+SKIP_LOBBY = "game_offline" #skips lobby loads game_offline directly 
