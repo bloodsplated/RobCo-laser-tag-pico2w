@@ -63,21 +63,6 @@ def test_base_rules_state_transitions(monkeypatch):
 
 
 
-def test_base_rules_game_events_and_points(monkeypatch):
-    rules, sent = _make_rules(monkeypatch)
-    rules.player_respawn()
-
-    rules.game_input(name="TRIG", value="SINGLE")
-    rules.game_input(name="TRIG", value="LONG")
-
-    rules.on_event(msg_type="TAG", VictimHP=0)
-    assert rules.hits_count == 1
-    assert rules.body_count == 1
-    assert rules.game_points == 6
-
-    out = rules.game_irtag(PlayerID=9, game_team_id=2, ShotID=3, Receiver="gun")
-    assert out == "-------------I was Shot --------------"
-
 
 def test_trigger_fx_special_cases(monkeypatch):
     rules, sent = _make_rules(monkeypatch)

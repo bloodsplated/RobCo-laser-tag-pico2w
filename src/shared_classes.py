@@ -1,5 +1,5 @@
 """super classes"""
-import supervisor
+import time
 
 
 
@@ -58,7 +58,7 @@ class Weapon:
 
         self.wep_name = "basic"
         self.wep_mag_size = 10
-        self.wep_cooldown = 1000  #ms time delay between shots
+        self.wep_cooldown = 1  # time delay between shots
         self.wep_damage = 1
         self.reload_sound =""
         self.empty_sound =""
@@ -132,10 +132,10 @@ class BaseGameRules:
         self.curent_spawn = 0
 
         self.cooldown_spawn = 10  # 10sec
-        self.last_fire = supervisor.ticks_ms()
+        self.last_fire = time.monotonic()
 
-        self.cooldown_hit = 1000 #ms delay between damage
-        self.last_hit = supervisor.ticks_ms()
+        self.cooldown_hit = 1 # delay between damage
+        self.last_hit = time.monotonic()
 
         self.curent_amo = 0
 
@@ -213,11 +213,11 @@ class BaseGameRules:
 
         if self.status == "ALIVE":
 
-            elapsed = supervisor.ticks_ms() - self.last_hit
+            elapsed = time.monotonic() - self.last_hit
             if elapsed < self.cooldown_hit:
                 log.debug(f"cooldown_hit cooldown elapsed:{elapsed} ms < {self.cooldown_hit}")
                 return
-            self.last_hit = supervisor.ticks_ms()
+            self.last_hit = time.monotonic()
 
             self.player_hit(1)
 
@@ -292,11 +292,11 @@ class BaseGameRules:
     def player_fire(self):
         """the player_fire action"""
         this_wep = self.get_weapon(self.game_shot_type)
-        elapsed = supervisor.ticks_ms() - self.last_fire
+        elapsed = time.monotonic() - self.last_fire
         if elapsed < this_wep.wep_cooldown:
             log.debug(f"weapon cooldown elapsed:{elapsed} ms < {this_wep.wep_cooldown}")
             return
-        self.last_fire = supervisor.ticks_ms()
+        self.last_fire = time.monotonic()
 
         if self.status == "ALIVE":
 
