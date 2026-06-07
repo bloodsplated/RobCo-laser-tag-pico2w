@@ -7,7 +7,7 @@ supervisor.runtime.autoreload = False
 
 
 
-data().hw_ver = "1.0"
+data().hw_ver = "1.0.1"
 
 if data("DEBUG",0) != 0:
     data().debug = True
